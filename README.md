@@ -3,17 +3,19 @@
 A modern, fullstack web app to supercharge your job search with AI! This project helps you generate tailored cover letters, rewrite resume lines, and manage your job applications—all in one place.
 
 ## ✨ Features (Current State)
-- **Frontend:** React + Tailwind CSS (fully set up, sample landing page working)
-- **Backend:** Node.js + Express.js (API server running)
-- **Database:** MongoDB-ready (models and connection scaffolded)
-- **Authentication:** JWT-based register/login endpoints (testable now)
-- **AI Integration:** OpenAI GPT-3.5-turbo endpoint scaffolded (for cover letter generation)
+- **Frontend:** React + Tailwind CSS (fully set up, authentication and resume upload working)
+- **Backend:** Node.js + Express.js (API server running, protected routes, resume endpoints)
+- **Database:** MongoDB-ready (User and Resume models, connection working)
+- **Authentication:** JWT-based register/login endpoints (fully functional)
+- **Resume Upload:** Users can paste/upload resumes, which are saved to MongoDB
+- **Protected Routes:** Backend endpoints require authentication
+- **AI Integration:** OpenRouter endpoint scaffolded (for cover letter generation)
 
 ## 📁 Folder Structure
 ```
 ai-job-helper/
 ├── client/   # React frontend (Tailwind CSS ready)
-├── server/   # Node.js backend (Express, MongoDB, OpenAI)
+├── server/   # Node.js backend (Express, MongoDB, OpenRouter)
 ├── .gitignore
 ├── README.md
 └── package.json
@@ -22,15 +24,17 @@ ai-job-helper/
 ## 🛠️ Getting Started
 1. **Clone the repo**
 2. **Install dependencies** for both `client` and `server`
-3. **Set up your `.env`** in `server/` (MongoDB URI, OpenAI key, JWT secret)
+3. **Set up your `.env`** in `server/` (MongoDB URI, OpenRouter key, JWT secret)
 4. **Run the backend:**
    ```bash
    cd server
-   node server.js
+   npm install
+   npm start
    ```
 5. **Run the frontend:**
    ```bash
    cd client
+   npm install
    npm start
    ```
 
@@ -38,8 +42,9 @@ ai-job-helper/
 - [x] Project scaffold & setup
 - [x] User authentication (register/login)
 - [x] Tailwind CSS integration
-- [ ] Job profile model & endpoints
-- [ ] Resume upload & line rewriter
+- [x] Resume upload & storage
+- [x] Protected backend routes
+- [ ] Resume line rewriter (AI)
 - [ ] AI-powered cover letter generator (UI)
 - [ ] Dashboard for saved jobs
 - [ ] Production deployment (Vercel/Railway)
@@ -48,9 +53,10 @@ ai-job-helper/
 
 > **Current Status:**
 > - Frontend and backend are both running.
-> - Auth endpoints are ready for testing.
+> - Auth endpoints and resume upload are ready for testing.
+> - Resumes are saved in MongoDB and linked to users.
 > - Ready for rapid feature development!
 
 ---
 
-Made with ❤️ using React, Node.js, MongoDB, and OpenAI.
+Made with ❤️ using React, Node.js, MongoDB, and OpenRouter.
